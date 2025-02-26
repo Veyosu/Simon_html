@@ -1,0 +1,17 @@
+body{
+    background-color: blanchedalmond;
+}
+
+header {
+   text-align: center;
+   background-color: maroon;
+}
+main {
+    background-color: chocolate;
+    padding: 25px;
+}
+
+button {
+    margin: 25px;
+    padding: 50px;
+}
