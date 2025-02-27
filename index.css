@@ -1,17 +1,46 @@
 body{
-    background-color: blanchedalmond;
+    background-color: rgb(224, 202, 169);
 }
 
 header {
    text-align: center;
-   background-color: maroon;
+   
+   background-color: chocolate;
+   border-style:groove;
+   border-width: 1cm;
+   border-color:coral;
 }
+
+header>p{
+    font-size: 40px;
+}
+
+p{
+font-size: 25px;
+}
+
+h1{
+    font-size: 100px;
+}
+
 main {
     background-color: chocolate;
     padding: 25px;
+    margin: 10px;
+    border-style:groove;
+   border-width: 1cm;
+   border-color:coral;
+}
+
+section {
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    margin: 5%;
+    
 }
 
 button {
-    margin: 25px;
-    padding: 50px;
+    border-radius: 100%;
+    margin: 15px;
+    padding: 10%;
 }
