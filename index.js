@@ -2,7 +2,7 @@ function creer_sequence(liste, n){
    var liste =[];
 
    for(i=0;i<n;i++){
-      liste[i]= Math.floor(Math.random()*2)
+      liste[i]= Math.floor(Math.random()*4)
    }
    return liste
 }
@@ -34,15 +34,19 @@ function jouer_son(element){
       } 
 }
 
-function jouer_sequence(liste,n){
-   var silence = new Audio("sons/silence.mp3");//Déclaration d'une nouvelle instance audio qui contient une seconde de vide sonore 
-
-   for(i=0;i<n;i++){
-      // CORRIGER L'UTILISATION DU DELAIS : LA FONCTON A L'  éINTERIEUR NE SE JOUE QU'UNE FOIS ????
-      
-      jouer_son(liste[i])
-      silence.play()//Méthode en ajoutant manuellement un " silence" ne fonctionne pas 
+function jouer_sequence(liste, n) {
+   function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
    }
+
+   async function playSequence() {
+      for (let i = 0; i < n; i++) {
+         jouer_son(liste[i]);
+         await delay(1000); // 1 second delay between sounds
+      }
+   }
+
+   playSequence();
 }
 
 function game_loop(){
